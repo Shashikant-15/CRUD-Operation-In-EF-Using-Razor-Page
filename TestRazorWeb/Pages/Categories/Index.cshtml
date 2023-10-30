@@ -6,8 +6,9 @@
         <div class="col-6"
            <h1>List Of Categories</h1>
        </div>
-       <div class="col-6">
-           <a asp-page="create" class="btn-primary btn">Create New Category</a>
+       <div class="col-6 text-end">
+           <a asp-page="create" class="btn-primary btn">
+            <i class="bi bi-plus-circle-fill"></i>&nbsp; New Category</a>
        </div>
   </div>
   <div class="row">
@@ -26,6 +27,19 @@
                         <tr>
                             <td>@obj.Id</td>
                             <td>@obj.Name</td>
+                            <td>
+                                <div class="w-75 btn-group "role="group">
+                                    <a asp-page="Edit" asp-route-id="@obj.Id"
+                                    class="btn btn-primary mx-3">
+                                        <i class="bi bi-pencil-square"></i>
+                                </a>
+
+                                    <a asp-page="Delete" asp-route-id="@obj.Id"
+                                       class="btn btn-primary mx-3">
+                                        <i class="bi bi-trash3-fill"></i>
+                                    </a>
+                                </div>
+                            </td>
                         </tr>
                     }
                 </tbody>
