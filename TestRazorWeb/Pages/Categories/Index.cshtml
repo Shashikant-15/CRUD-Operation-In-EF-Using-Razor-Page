@@ -1,0 +1,36 @@
+﻿@page
+@model TestRazorWeb.Pages.Categories.IndexModel
+
+<div class="container">
+    <div class="row">
+        <div class="col-6"
+           <h1>List Of Categories</h1>
+       </div>
+       <div class="col-6">
+           <a asp-page="create" class="btn-primary btn">Create New Category</a>
+       </div>
+  </div>
+  <div class="row">
+      <div class="col-12">
+      <table class="d-lg-table table-bordered table-striped">
+          <thead>
+              <tr>
+                  <th> Category Id</th>
+                  <th> Category Name </th>
+
+              </tr>
+          </thead>
+          <tbody>
+              @foreach(var obj in Model.Categories)
+                    {
+                        <tr>
+                            <td>@obj.Id</td>
+                            <td>@obj.Name</td>
+                        </tr>
+                    }
+                </tbody>
+      </table>
+  </div>
+ </div>
+
+</div>
